@@ -12,7 +12,8 @@ public class LeitorXML {
 
 	@SuppressWarnings("unchecked")
 	public List<Negociacao> carrega(InputStream inputStream) {
-		sadfasdfas
+		XStream stream = new XStream(new DomDriver());
+		stream.alias("negociacao", Negociacao.class);
 		return (List<Negociacao>) stream.fromXML(inputStream);
 	}
 
